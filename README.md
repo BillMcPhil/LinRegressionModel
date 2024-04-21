@@ -9,11 +9,11 @@ Since the model consists of only a single weight and bias backpropagation is ver
 $output = weight\*input + bias$, taking the partial derivatives with respect to the weight and bias gives $2(input)(output-target)$ and $2(output - target)$ respectively.
 Then we sum up all the loss functions and gradients for every point in the dataset before dividing them by the size of the data set, so 
 
-$$loss = \frac{1}{n}\sum_{k=1}^n (wx+b - t)^2\$$ 
+$$loss = \frac{1}{n}\sum_{k=1}^n (wx_n+b - t)^2\$$ 
 
-$$w_g = \frac{1}{n}\sum_{k=1}^n 2x(wx+b - t)$$
+$$w_g = \frac{1}{n}\sum_{k=1}^n 2x_n(wx_n+b - t)$$
 
-$$b_g = \frac{1}{n}\sum_{k=1}^n 2(wx+b - t)$$
+$$b_g = \frac{1}{n}\sum_{k=1}^n 2(wx_n+b - t)$$
 
 Where $w$ and $w_g$ are the weight and its gradient, $b$ and $b_g$ are the bias and it's gradient, $x$ is the input value, and $t$ is the target value.
 
