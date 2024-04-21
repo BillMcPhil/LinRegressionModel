@@ -17,8 +17,7 @@ $$b_g = \frac{1}{n}\sum_{k=1}^n 2(wx+b - t)$$
 
 Where $w$ and $w_g$ are the weight and its gradient, $b$ and $b_g$ are the bias and it's gradient, $x$ is the input value, and $t$ is the target value.
 
-A very simple gradient descent function is then applied to update the weights and biases where they are updated to their partial derivatives multiplied by the learning rate to
-minimize the cost function:
+A very simple gradient descent function is then applied to update the weights and biases:
 $$w_n = w - w_gdl$$
 
 $$b_n = b - b_gdl$$
