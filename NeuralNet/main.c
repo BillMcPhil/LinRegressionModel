@@ -9,7 +9,7 @@
 
 // Define essential variables
 float LEARNING_RATE =  0.0001;
-#define EPOCHS 200000
+int EPOCHS = 200000;
 
 // Neural Network struct
 struct NeuralNet 
@@ -50,11 +50,27 @@ int main(int argc, char *argv[])
 {
 
     // Make sure user input is correct
-    if (argc != 2) 
+    if (argc < 2) 
     {
-        printf("Need a file name for dataset");
+        printf("Need a file name for dataset\n");
         return 1;
     }
+
+    if (argc != 2 && argc != 4) {
+        printf("Incorrect number of arguments\n");
+        return 1;
+    }
+
+    else if (argc == 4) {
+        LEARNING_RATE = atof(argv[2]);
+        EPOCHS = atoi(argv[3]);
+
+        if (LEARNING_RATE == 0.0f || EPOCHS == 0) {
+            printf("Failed to convert string to number\n");
+            return 1;
+        }
+    }
+
 
     // Open file
     FILE *dataset = fopen(argv[1], "r");
